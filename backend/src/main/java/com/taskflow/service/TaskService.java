@@ -1,18 +1,23 @@
 package com.taskflow.service;
 
-import com.taskflow.model.Task;
-import com.taskflow.repository.TaskRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
+import com.taskflow.model.Task;
+import com.taskflow.repository.TaskRepository;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
 @Service
 @RequiredArgsConstructor
+
 public class TaskService {
 
     private final TaskRepository taskRepository;
+    private Task TaskValue = new Task();
 
     public List<Task> getAllTasks() {
         return taskRepository.findAll();

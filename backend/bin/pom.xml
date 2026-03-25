@@ -17,7 +17,7 @@
     <name>TaskFlow Backend</name>
 
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
@@ -27,7 +27,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- JPA + H2 -->
+        <!-- JPA + H2 (easy to swap with PostgreSQL for prod) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -38,7 +38,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- PostgreSQL -->
+        <!-- PostgreSQL driver (for production deployment) -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
@@ -58,27 +58,12 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Spring Boot Test (MockMvc, SpringRunner) -->
+        <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- Mockito -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- JUnit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -95,14 +80,6 @@
                     </excludes>
                 </configuration>
             </plugin>
-
-            <!-- JUnit 5 support for Maven -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-
         </plugins>
     </build>
 </project>

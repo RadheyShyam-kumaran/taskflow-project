@@ -17,7 +17,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class TaskController {
 
-    private final TaskService taskService;
+    private final TaskService taskService ;
 
     // GET /api/tasks — list all (or filter by status)
     @GetMapping
